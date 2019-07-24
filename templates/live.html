@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block live %}
+
+<div class="limiter">
+    <div class="">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Time</th>
+                            <th class="column1">Home</th>
+                            <th class="column1">Score</th>
+                            <th class="column1">Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for live in lives %}
+                            <tr>
+                                <td class="column1" style="color: red" >{{live.status}}'</td>
+                                <td class="column1">{{live.home}}</td>
+                                <td class="column1"><b style="color: red">{{live.scoreFullTime}}</b>(<small>{{live.scoreFirstTime}}</small>)</td>
+                                <td class="column1">{{live.away}}</td>
+                            </tr>
+                            {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

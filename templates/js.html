@@ -1,0 +1,20 @@
+{% load static %}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+<script src="{% static 'js/main2.js'%}" ></script>
+<script>
+    function makeAjax() {
+        $.ajax({
+            url: "",
+            context: document.body,
+            success: function(s,x){
+                $(this).html(s);
+            }
+        });
+    }
+    setTimeout(makeAjax, 10000);
+</script>
